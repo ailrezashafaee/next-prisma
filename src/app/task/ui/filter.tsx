@@ -1,17 +1,12 @@
 "use client";
+import { useAppDispatch, useAppSelector } from "@/hooks/storeHooks";
 import { filterStatus } from "@/models/filter";
 import { changeStatus } from "@/store/slices/filterSlice";
-import { RootStore } from "@/store/store";
 import clsx from "clsx";
-import { useDispatch, useSelector } from "react-redux";
 const Filters = () => {
-  const status = useSelector((state: RootStore) => {
-    return state.filterSlice.status;
-  });
-  const remains = useSelector((state: RootStore) => {
-    return state.taskReducer.tasks.length;
-  });
-  const dispatch = useDispatch();
+  const status = useAppSelector((state) => state.filterSlice.status);
+  const remains = useAppSelector((state) => state.taskReducer.tasks.length);
+  const dispatch = useAppDispatch();
   return (
     <div className="w-full flex text-[#999] pt-2.5 mt-1 text-xs flex-row-reverse justify-between">
       <div className="flex items-center gap-x-2">

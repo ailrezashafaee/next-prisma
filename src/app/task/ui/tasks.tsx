@@ -4,11 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootStore } from "@/store/store";
 import Task from "./task";
 import { filterStatus } from "@/models/filter";
+import { useAppSelector } from "@/hooks/storeHooks";
 const TasksContainer = () => {
-  const tasks: TaskType[] = useSelector((state: RootStore) =>
-    state.taskReducer.tasks
-  );
-  const filter: filterStatus = useSelector((state: RootStore) =>
+  const tasks: TaskType[] = useAppSelector((state) => state.taskReducer.tasks);
+  const filter: filterStatus = useAppSelector((state) =>
     state.filterSlice.status
   );
   const taskFiltered = tasks.filter((value) => {

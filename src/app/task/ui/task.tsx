@@ -2,11 +2,11 @@ import Image from "next/image";
 import CheckIcon from "@/../public/icons/check.svg";
 import DeleteIcon from "@/../public/icons/delete.svg";
 import { TaskType } from "@/models/task";
-import { useDispatch } from "react-redux";
 import { checkTask, deleteTask } from "@/store/slices/taskSlice";
 import clsx from "clsx";
+import { useAppDispatch } from "@/hooks/storeHooks";
 const Task: React.FC<TaskType> = (props) => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   return (
     <div
       onClick={() => dispatch(checkTask(props.id))}

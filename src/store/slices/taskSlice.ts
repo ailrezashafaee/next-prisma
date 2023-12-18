@@ -24,7 +24,7 @@ export const taskSlice = createSlice({
       const newArr = state.tasks.filter((value) => action.payload !== value.id);
       state.tasks = [...newArr];
     },
-    checkTask: (state, action: PayloadAction<nubmer>) => {
+    checkTask: (state, action: PayloadAction<number>) => {
       const newArr = state.tasks.map((value, _) => {
         if (action.payload === value.id) {
           return { ...value, status: !value.status };
