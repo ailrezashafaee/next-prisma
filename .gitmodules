@@ -1,0 +1,3 @@
+[submodule "src/shared-module"]
+	path = src/shared-module
+	url = https://github.com/ailrezashafaee/shared-module.git
