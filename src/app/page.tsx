@@ -1,7 +1,10 @@
+import ThisIsRafCe from "@/shared-module/newFile";
+
 export default function Home() {
   return (
-    <div>
-     this is home page 
+    <div className="mt-20">
+      <ThisIsRafCe />
+      testing
     </div>
   );
 }
